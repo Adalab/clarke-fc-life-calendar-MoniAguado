@@ -1,0 +1,21 @@
+
+.form__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+
+.button__save{
+  margin-bottom: 10px;
+}
+
+.button {
+  width: 80px;
+  height: 30px;
+  background-color: $colorHeader;
+  color: black;
+  border: black solid 2px;
+}

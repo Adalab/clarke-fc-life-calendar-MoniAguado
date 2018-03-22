@@ -1,0 +1,33 @@
+.icon {
+  width: 40px;
+}
+
+.main {
+  background-color: $colorMain;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.main__box{
+  width: 50%;
+  height: 50vh;
+  border: white solid 3px;
+  padding: 30px;
+  margin: 50px;
+}
+
+.form__date {
+  margin: 20px;
+}
+
+.icons__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.form__textarea {
+  margin-top: 20px;
+}

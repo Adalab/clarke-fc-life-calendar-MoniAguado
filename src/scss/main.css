@@ -1,0 +1,56 @@
+.icon {
+  width: 40px; }
+
+.main {
+  background-color: #565454;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.main__box {
+  width: 50%;
+  height: 50vh;
+  border: white solid 3px;
+  padding: 30px;
+  margin: 50px; }
+
+.form__date {
+  margin: 20px; }
+
+.icons__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center; }
+
+.form__textarea {
+  margin-top: 20px; }
+
+.form__buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin: 20px; }
+
+.button__save {
+  margin-bottom: 10px; }
+
+.button {
+  width: 80px;
+  height: 30px;
+  background-color: #4ff9b8;
+  color: black;
+  border: black solid 2px; }
+
+.header {
+  width: 100%;
+  height: 150px;
+  background-color: #4ff9b8;
+  color: black;
+  text-align: center;
+  font-size: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
