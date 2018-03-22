@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Form from './components/Form';
+import Editor from './components/Editor';
 
 import '././scss/main.css';
 
@@ -9,16 +9,41 @@ class App extends Component {
   constructor(props) {
     super(props);
 
+    this.handleDate = this.handleDate.bind(this);
+    this.handleHappy = this.handleHappy.bind(this);
+    this.handleSad = this.handleSad.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleOption = this.handleOption.bind(this);
+
 
     this.state = {
-      value: '',
-      option: '1'
+      date: '',
+      smile: true,
+      cry: false,
+      value: ''
+
     };
 
-    handleChange(e){
+    handleDate(e) {
+      const calendar = e.target.value
+      this.setState({
+        date: calendar
+      })
+    }
+
+    handleHappy(e){
+      const smileFace = document.querySelector('input[name="option"]:checked').value;
+      this.setState({
+        smile: !smileFace})
+    }
+
+    handleSad(e){
+      const sadFace = document.querySelector('input[name="option"]:checked').value;
+      this.setState({
+        cry: !sadFace})
+    }
+
+    handleText(e){
       this.setState({
         value:e.target.value})
     };
@@ -27,11 +52,6 @@ class App extends Component {
       e.preventDefault();
     }
 
-    handleOption(e){
-      const selected = document.querySelector('input[name="option"]:checked').value;
-      this.setState({
-        option:e.target.value})
-    }
 
 }
   render() {
@@ -42,8 +62,24 @@ class App extends Component {
         </header>
         <main className="main">
           <div className="main__box">
-            <Form onChange={this.handleOption} onChange={this.handleChange} onSubmit={this.handleSubmit}/>
+            <Editor calendar={this.handleDate}
+              happy={this.handleHappy}
+              sad={this.handleSad}
+              message={this.handleText}
+              onSubmit={this.handleSubmit}/>
           </div>
+          {/* <Switch>
+						<Route exact path='/' render={() =>
+              <Editor
+
+              /> }
+            />
+
+
+            <Route exact path='/' component={ App } />
+
+            />
+          </Switch> */}
         </main>
       </div>
     )
