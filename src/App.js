@@ -6,22 +6,34 @@ import '././scss/main.css';
 import background from './images/descarga.jpg';
 
 class App extends Component {
-  // constructor(props) {
-  //   super(props);
-  //
-  //   this.handleChange = this.handlechange.bind(this);
-  //   this.state = {
-  //     option: '1'
-  //   }
-  //
-  //   handleChange(e) {
-  //     // const icon = document.querySelector('input:checked').value;
-  //     this.setState({
-  //       option: e.target.value
-  //     });
-  //   }
+  constructor(props) {
+    super(props);
 
-// }
+    this.handleChange = this.handleChange.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleOption = this.handleOption.bind(this);
+
+    this.state = {
+      value: '',
+      option: '1'
+    };
+
+    handleChange(e){
+      this.setState({
+        value:e.target.value})
+    };
+
+    handleSubmit(e){
+      e.preventDefault();
+    }
+
+    handleOption(e){
+      const selected = document.querySelector('input[name="option"]:checked').value;
+      this.setState({
+        option:e.target.value})
+    }
+
+}
   render() {
     return (
       <div className="App">
@@ -30,7 +42,7 @@ class App extends Component {
         </header>
         <main className="main">
           <div className="main__box">
-            <Form />
+            <Form onChange={this.handleOption} onChange={this.handleChange} onSubmit={this.handleSubmit}/>
           </div>
         </main>
       </div>
