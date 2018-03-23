@@ -12,7 +12,7 @@ class App extends Component {
     this.handleDate = this.handleDate.bind(this);
     this.handleHappy = this.handleHappy.bind(this);
     this.handleSad = this.handleSad.bind(this);
-    this.handleChange = this.handleChange.bind(this);
+    this.handleText = this.handleText.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
 
 
@@ -23,6 +23,7 @@ class App extends Component {
       value: ''
 
     };
+  }
 
     handleDate(e) {
       const calendar = e.target.value
@@ -52,8 +53,6 @@ class App extends Component {
       e.preventDefault();
     }
 
-
-}
   render() {
     return (
       <div className="App">
