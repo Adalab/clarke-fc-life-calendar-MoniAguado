@@ -10,12 +10,17 @@
 
 .button__save{
   margin-bottom: 10px;
+  background-color: $colorHeader;
+}
+
+.button__cancel {
+    background-color: white;
 }
 
 .button {
   width: 80px;
   height: 30px;
-  background-color: $colorHeader;
   color: black;
   border: black solid 2px;
+  border-radius: 5px;
 }

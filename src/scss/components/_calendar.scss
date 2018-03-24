@@ -1,0 +1,27 @@
+.calendar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar__clic {
+  width: 180px;
+  height: 40px;
+  background-color: $colorHeader;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+}
+
+.button-plus {
+  color: black;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.calendar__faces {
+  height: 80%;
+  width: 100%;
+  border: white solid 1px;
+}

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import sad from './../images/crying.svg';
 import happy from './../images/happy.svg';
@@ -28,8 +29,12 @@ class Form extends Component {
             <input onChange={this.props.message} type="text" className="form__textarea" cols="100" rows="200" placeholder="Write something cool"></input>
           </div>
           <div className="form__buttons">
-            <button className="button button__save" onSubmit={this.props.handleSubmit}>Guardar</button>
-            <button className="button button__cancel">Cancelar</button>
+            <Link to='/calendar'>
+              <button className="button button__save" onSubmit={this.props.handleSubmit}>Guardar</button>
+            </Link>
+            <Link to='/calendar'>
+              <button className="button button__cancel" onSubmit={this.props.handleSubmit}>Cancelar</button>
+            </Link>
           </div>
         </form>
       </div>

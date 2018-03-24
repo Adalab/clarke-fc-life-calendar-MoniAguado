@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Editor from './components/Editor';
+import Calendar from './components/Calendar';
+import { Link, Route, Switch } from 'react-router-dom';
 
 import '././scss/main.css';
 
@@ -61,24 +63,24 @@ class App extends Component {
         </header>
         <main className="main">
           <div className="main__box">
-            <Editor calendar={this.handleDate}
-              happy={this.handleHappy}
-              sad={this.handleSad}
-              message={this.handleText}
-              onSubmit={this.handleSubmit}/>
+            <Switch>
+              <Route exact path='/' render={() =>
+                <Editor calendar={this.handleDate}
+                  happy={this.handleHappy}
+                  sad={this.handleSad}
+                  message={this.handleText}
+                  onSubmit={this.handleSubmit}/>}
+              />
+              <Route path='/calendar' render={() =>
+                <Calendar />}
+              />
+            </Switch>
           </div>
-          {/* <Switch>
-						<Route exact path='/' render={() =>
-              <Editor
-
-              /> }
-            />
 
 
-            <Route exact path='/' component={ App } />
 
-            />
-          </Switch> */}
+
+
         </main>
       </div>
     )
