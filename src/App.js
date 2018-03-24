@@ -22,7 +22,9 @@ class App extends Component {
       date: '',
       smile: true,
       cry: false,
-      value: ''
+      text: '',
+      data: []
+
 
     };
   }
@@ -48,14 +50,40 @@ class App extends Component {
 
     handleText(e){
       this.setState({
-        value:e.target.value})
+        text:e.target.value})
     };
 
     handleSubmit(e){
       e.preventDefault();
     }
 
+    componentWillmount() {
+      localStorage.getItem('data') && this.setState({
+        data: JSON.parse(localStorage.getItem('data')),
+      })
+    }
+
+    componentDidMount(){
+      if(localStorage.getItem('data')){
+        this.calendarInfo();
+      }
+    }
+
+    calendarInfo() {
+      const {date, smile, cry, text, data} = this.state;
+        const newDate = this.state.date;
+        const newText = this.state.text;
+        const newFace = (smile) ? ':)' : ':(';
+        this.setState({
+          data: data.concat({newDate, newText, newFace})
+        });
+}
+    componentWillUpdate (nextProps, nextState) {
+      localStorage.setItem('data', JSON.stringify(nextState.data));
+    }
+
   render() {
+
     return (
       <div className="App">
         <header className="header">
